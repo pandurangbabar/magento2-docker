@@ -1,7 +1,10 @@
 version : '3'
   services:
     web:
-      build: .
+      build: app
       container_name: web
+      restart: always
       ports:
         - "80:80"
+      volumes:
+        - ./src:/var/www/html
