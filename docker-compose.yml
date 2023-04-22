@@ -4,7 +4,6 @@ services:
   web:
     build: .
     container_name: web
-    restart: always
     ports:
       - "80:80"
     volumes:
