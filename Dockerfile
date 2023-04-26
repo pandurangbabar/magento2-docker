@@ -1,4 +1,6 @@
 # syntax=docker/dockerfile:1
 FROM php:8.1-apache 
 
-CMD ["apache2-foreground"]
+#Apache2 configuration
+RUN a2enmod rewrite
+RUN service apache2 restart
