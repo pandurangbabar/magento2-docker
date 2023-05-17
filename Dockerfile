@@ -1,6 +1,9 @@
 # syntax=docker/dockerfile:1
 FROM php:8.1.18-apache 
 
+ADD https://github.com/mlocati/docker-php-extension-installer/releases/latest/download/install-php-extensions /usr/local/bin/
+RUN chmod +x /usr/local/bin/install-php-extensions
+
 # Install System Dependencies
 RUN apt-get update \
 	&& DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
@@ -32,22 +35,11 @@ RUN apt-get update \
 	&& apt-get clean
 
 #PHP configuration for magento 2
-RUN docker-php-ext-configure \
-  	gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/; \
-	docker-php-ext-install \
-  	bcmath \
-  	gd \
-  	intl \
-  	pdo_mysql \	
-  	soap \
-  	opcache \
-  	sockets \
-  	xsl \
-  	zip \
-  	mbstring \
+RUN docker-php-ext-configure gd --with-jpeg=/usr/include/ --with-freetype=/usr/include/;
+RUN	install-php-extensions bcmath gd intl pdo_mysql soap opcache sockets xsl zip mbstring
 
 #Apache2 configuration for magento 2
-RUN	apt-get update -y
+RUN	apt-get update
 RUN	a2enmod rewrite
 RUN	a2enmod expires
 RUN	a2enmod headers
