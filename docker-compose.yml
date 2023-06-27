@@ -9,7 +9,7 @@ services:
     volumes:
       - ./src:/var/www/html
   db:
-    image: mysql:5.7
+    image: mysql:8.0
     container_name: db
     ports:
       - "3306:3306"
@@ -19,4 +19,4 @@ services:
         MYSQL_USER: magento
         MYSQL_PASSWORD: Magento@123
     volumes:
-      - /var/www/html/db/db57:/var/lib/mysql
+      - /var/www/html/db/db80:/var/lib/mysql
