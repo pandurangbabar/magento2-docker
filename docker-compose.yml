@@ -8,6 +8,12 @@ services:
       - "80:80"
     volumes:
       - ./src:/var/www/html
+    depends_on:
+      - db
+    links:
+      - db
+    networks:
+      - magento2-docker-network
   db:
     image: mysql:8.0
     container_name: db
@@ -20,3 +26,20 @@ services:
         MYSQL_PASSWORD: Magento@123
     volumes:
       - /var/www/html/db/db80:/var/lib/mysql
+    networks:
+      - magento2-docker-network
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    environment:
+     - PMA_HOST=db
+     - PMA_USER=root
+     - PMA_PASSWORD=Root@123
+     - MYSQL_ROOT_PASSWORD=Root@123
+    ports:
+     - 8080:80
+    networks:
+        - magento2-docker-network
+networks:
+  magento2-docker-network:
+    driver: bridge
