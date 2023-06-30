@@ -20,7 +20,7 @@ services:
     ports:
       - "3306:3306"
     environment:
-        MYSQL_ROOT_PASSWORD: rootpass
+        MYSQL_ROOT_PASSWORD: password
         MYSQL_DATABASE: magento
         MYSQL_USER: magento
         MYSQL_PASSWORD: magento
@@ -33,10 +33,7 @@ services:
     image: phpmyadmin/phpmyadmin
     environment:
      - PMA_HOST=db
-     - PMA_USER=root
-     - PMA_PASSWORD=root
-     - MYSQL_USER=magento
-     - MYSQL_ROOT_PASSWORD=magento
+     - MYSQL_ROOT_PASSWORD=password
     ports:
      - 8080:80
     depends_on:
