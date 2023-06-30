@@ -20,12 +20,12 @@ services:
     ports:
       - "3306:3306"
     environment:
-        MYSQL_ROOT_PASSWORD: Root@123
+        MYSQL_ROOT_PASSWORD: rootpass
         MYSQL_DATABASE: magento
         MYSQL_USER: magento
-        MYSQL_PASSWORD: Magento@123
+        MYSQL_PASSWORD: magento
     volumes:
-      - dbdata:/var/lib/mysql
+      - ./dbdata:/var/lib/mysql
     networks:
       - magento2-docker-network
 
@@ -34,10 +34,13 @@ services:
     environment:
      - PMA_HOST=db
      - PMA_USER=root
-     - PMA_PASSWORD=Root@123
-     - MYSQL_ROOT_PASSWORD=Root@123
+     - PMA_PASSWORD=root
+     - MYSQL_USER=magento
+     - MYSQL_ROOT_PASSWORD=magento
     ports:
      - 8080:80
+    depends_on:
+      - db
     networks:
         - magento2-docker-network
 
@@ -54,7 +57,7 @@ services:
         soft: -1
         hard: -1
     volumes:
-      - es_data:/usr/share/elasticsearch/data
+      - ./es_data:/usr/share/elasticsearch/data
     ports:
       - 9200:9200
     networks:
@@ -63,8 +66,4 @@ services:
 networks:
   magento2-docker-network:
     driver: bridge
-volumes:
-  es_data:
-    driver: local
-  dbdata:
-    driver: local
+
