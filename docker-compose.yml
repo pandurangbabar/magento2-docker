@@ -60,6 +60,10 @@ services:
     networks:
       - magento2-docker-network
 
+  rabbitmq:
+    image: rabbitmq:3.11-management
+    container_name: rabbitmq
+
 networks:
   magento2-docker-network:
     driver: bridge
