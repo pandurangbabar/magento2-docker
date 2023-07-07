@@ -63,6 +63,16 @@ services:
   rabbitmq:
     image: rabbitmq:3.11-management
     container_name: rabbitmq
+    environment:
+      - RABBITMQ_DEFAULT_USER=myuser
+      - RABBITMQ_DEFAULT_PASS=mypassword
+    ports:
+      # AMQP protocol port
+      - '5672:5672'
+      # HTTP management UI
+      - '15672:15672'
+    networks:
+      - magento2-docker-network       
 
 networks:
   magento2-docker-network:
