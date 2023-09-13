@@ -34,6 +34,10 @@ RUN apt-get update \
 	bash-completion \
 	&& apt-get clean
 
+# Install Composer
+
+RUN	curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin/ --filename=composer
+
 #PHP configuration for magento 2
 RUN docker-php-ext-configure gd --with-jpeg=/usr/include/ --with-freetype=/usr/include/;
 RUN	install-php-extensions bcmath gd intl pdo_mysql soap opcache sockets xsl zip
@@ -51,4 +55,7 @@ RUN ln -s /etc/apache2/sites-available/local.m2docker.conf /etc/apache2/sites-en
 ADD .docker/php/php.ini /usr/local/etc/php/php.ini
 
 RUN service apache2 restart
+
+VOLUME /var/www/html
+WORKDIR /var/www/html
 
