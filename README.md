@@ -40,7 +40,7 @@ sudo chmod -R 777 magento2-docker
 sudo chown -R $USER:$USER magento2-docker
 
 
-3. Create docker environment
+## 3. Create docker environment ##
    1. If you have installed apache2 and MySQL on your system, then we need to stop both services. We need to stop these services because there will be a port conflict when we run these services using a docker container. Please use the below commands to stop the apach2 and mysql service.
 sudo service mysql stop
 sudo service apache2 stop
@@ -84,7 +84,7 @@ sudo chown -R $USER:$USER magento2-docker
 
 
    8. Now our Magento 2 development environment is ready. Now will install Magento 2.
-4. Install Magento 2
+## 4. Install Magento 2 ##
    1. Go to the web container using the below command
 sudo docker exec -it web /bin/bash
   
@@ -152,7 +152,7 @@ php bin/magento indexer: reindex
 
 
 Now magento installation is complete.
-5. Test frontend and backend 
+## 5. Test frontend and backend ##
    1. Frontend URL - http://localhost/
 Backend URL - http://localhost/admin_1kdhtd
 
