@@ -1,6 +1,6 @@
 # Install Magento 2 using the Docker Environment 
 
-I assume you have installed Ubuntu 20.04.5 LTS OS on your computer. I installed and tested this repository for the Magento 2.4.7-beta1 version.
+I assume you have installed **Ubuntu 20.04.5 LTS** OS on your computer. I installed and tested this repository for the Magento 2.4.7-beta1 version.
 
 1. Docker and Docker-Compose
    1. First, we need to install docker and docker-compose on your Ubuntu machine. If docker and docker-compose are not installed on your device, please use the steps below to install them.
