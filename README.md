@@ -12,21 +12,31 @@ sudo apt-get update
 sudo apt-get install ca-certificates curl gnupg
 ```
    4. Add Docker’s official GPG key
+```
 sudo install -m 0755 -d /etc/apt/keyrings
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
 sudo chmod a+r /etc/apt/keyrings/docker.gpg
-   5. Use the following command to set up the repository.
+```
+   6. Use the following command to set up the repository.
+```
 echo \
   "deb [arch="$(dpkg --print-architecture)" signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
   "$(. /etc/os-release && echo "$VERSION_CODENAME")" stable" | \
   sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
-   6. Update the apt package index
+```
+   7. Update the apt package index
+```
 sudo apt-get update
-   7. Install docker-engine
+```
+   8. Install docker-engine
+```
 sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
-   8. Verify that the Docker Engine installation
+```
+   9. Verify that the Docker Engine installation
+```
 sudo docker run hello-world
-   9. For more information refer to the below URL
+```
+   10. For more information refer to the below URL
 https://docs.docker.com/engine/install/ubuntu/
 ## 2. Take a clone of the Magento 2 Docker repository ##
    1. Take a clone of the Magento 2 Docker repository from https://github.com/pandurangbabar/magento2-docker
