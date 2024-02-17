@@ -36,7 +36,7 @@ sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin 
 ```
 sudo docker run hello-world
 ```
-   10. For more information refer to the below URL
+   10. For more information on how to install the Docker engine on Ubuntu use this link.
 https://docs.docker.com/engine/install/ubuntu/
 ## 2. Take a clone of the Magento 2 Docker repository ##
    1. Take a clone of the Magento 2 Docker repository from https://github.com/pandurangbabar/magento2-docker
