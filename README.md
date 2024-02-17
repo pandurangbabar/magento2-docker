@@ -4,7 +4,7 @@ I assume you have installed **Ubuntu 20.04.5 LTS** OS on your computer.
 
 I installed and tested this repository for the **Magento 2.4.7-beta1** version.
 
-1. Docker and Docker-Compose
+**1. Docker and Docker-Compose**
    1. First, we need to install docker and docker-compose on your Ubuntu machine. If docker and docker-compose are not installed on your device, please use the steps below to install them.
    2. Update the apt package index and install packages to allow apt to use a repository over HTTPS
 sudo apt-get update
