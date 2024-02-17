@@ -26,7 +26,7 @@ sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin 
 sudo docker run hello-world
    8. For more information refer to the below URL
 https://docs.docker.com/engine/install/ubuntu/
-2. Take a clone of the Magento 2 Docker repository
+## 2. Take a clone of the Magento 2 Docker repository ##
    1. Take a clone of the Magento 2 Docker repository from https://github.com/pandurangbabar/magento2-docker
 Use the below command to take a clone.
 git clone https://github.com/pandurangbabar/magento2-docker.git
