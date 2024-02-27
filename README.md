@@ -38,10 +38,14 @@ sudo docker run hello-world
 ```
    8. For more information on how to install the Docker engine on Ubuntu use this link.
 https://docs.docker.com/engine/install/ubuntu/
+
 ## 2. Take a clone of the Magento 2 Docker repository ##
-   1. Take a clone of the Magento 2 Docker repository from https://github.com/pandurangbabar/magento2-docker
+   1. Take a clone of the Magento 2 Docker repository from  
+https://github.com/pandurangbabar/magento2-docker  
 Use the below command to take a clone.
+```
 git clone https://github.com/pandurangbabar/magento2-docker.git
+```
    2. Check the permission of folder “magento2-docker”. We need read-write permission for the folders dbdata, es_data, and src.
 
 
