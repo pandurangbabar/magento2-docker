@@ -50,7 +50,7 @@ git clone https://github.com/pandurangbabar/magento2-docker.git
 > [!IMPORTANT]
 > Check the permission of folder “magento2-docker”. We need read-write permission for the folders dbdata, es_data, and src.
 
-You can use the below commands to set permissions for the folder.
+2. You can use the below commands to set permissions for the folder.
 
 ```
 sudo chmod -R 777 magento2-docker
