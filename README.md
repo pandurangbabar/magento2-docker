@@ -41,20 +41,21 @@ https://docs.docker.com/engine/install/ubuntu/
 
 ## 2. Take a clone of the Magento 2 Docker repository ##
    1. Take a clone of the Magento 2 Docker repository from  
-https://github.com/pandurangbabar/magento2-docker  
+https://github.com/pandurangbabar/magento2-docker
+ 
 Use the below command to take a clone.
 ```
 git clone https://github.com/pandurangbabar/magento2-docker.git
 ```
-   2. Check the permission of folder “magento2-docker”. We need read-write permission for the folders dbdata, es_data, and src.
-
+> [!IMPORTANT]
+> Check the permission of folder “magento2-docker”. We need read-write permission for the folders dbdata, es_data, and src.
 
 You can use the below commands to set permissions for the folder.
 
-
+```
 sudo chmod -R 777 magento2-docker
 sudo chown -R $USER:$USER magento2-docker
-
+```
 
 ## 3. Create docker environment ##
    1. If you have installed apache2 and MySQL on your system, then we need to stop both services. We need to stop these services because there will be a port conflict when we run these services using a docker container. Please use the below commands to stop the apach2 and mysql service.
