@@ -65,9 +65,14 @@ sudo service apache2 stop
 sudo service nginx stop
 ```
 
-   2. Make sure the docker service is started using the command sudo service docker status
-If it is not started start the service using the command 
+   2. Make sure the docker service is started using the command.
+```
+ sudo service docker status
+```
+If it is not started start the service using the command.
+```
 sudo service docker start
+```
    3. Go to the repository magento2-docker and execute the below command
 cd magento2-docker
 sudo docker compose up -d
