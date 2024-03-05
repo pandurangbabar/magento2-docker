@@ -59,10 +59,11 @@ sudo chown -R $USER:$USER magento2-docker
 
 ## 3. Create docker environment ##
    1. If you have installed apache2 and MySQL on your system, then we need to stop both services. We need to stop these services because there will be a port conflict when we run these services using a docker container. Please use the below commands to stop the apach2 and mysql service.
+```
 sudo service mysql stop
 sudo service apache2 stop
 sudo service nginx stop
-
+```
 
    2. Make sure the docker service is started using the command sudo service docker status
 If it is not started start the service using the command 
