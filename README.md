@@ -74,12 +74,18 @@ If it is not started start the service using the command.
 sudo service docker start
 ```
    3. Go to the repository magento2-docker and execute the below command
+```
 cd magento2-docker
+
 sudo docker compose up -d
 
+```
 
 We can use 
-Sudo docker compose down 
+```
+sudo docker compose down
+
+```
 Stop and remove all containers.
 
 
