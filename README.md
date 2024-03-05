@@ -87,21 +87,21 @@ sudo docker compose down
 
 ```
 Stop and remove all containers.
-
-
   
 
-   4. We can make sure all the containers are running fine using the command
+4. We can make sure all the containers are running fine using the command
+```
 sudo docker ps -a
+
+```
+
+   6. Apache web server is running at http://localhost/
   
 
-   5. Apache web server is running at http://localhost/
+   7. PHPMyAdmin is running at http://localhost:8080/
   
 
-   6. PHPMyAdmin is running at http://localhost:8080/
-  
-
-   7. Elasticsearch is running at http://localhost:9200/
+   8. Elasticsearch is running at http://localhost:9200/
   
 
 If the elastic search is not working please check permissions and set permissions using the below commands
