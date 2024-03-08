@@ -80,6 +80,7 @@ cd magento2-docker
 sudo docker compose up -d
 
 ```
+![docker-compose-up-d](https://github.com/pandurangbabar/magento2-docker/assets/59949205/abfc913a-c706-4069-85cb-448ebfc5a362)
 
 We can use 
 ```
