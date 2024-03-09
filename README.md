@@ -101,7 +101,7 @@ sudo docker ps -a
   ![Apache](https://github.com/pandurangbabar/magento2-docker/assets/59949205/7d18642b-d4f2-4d65-a141-369bf738413a)
 
    7. PHPMyAdmin is running at http://localhost:8080/
-  
+     ![mysql](https://github.com/pandurangbabar/magento2-docker/assets/59949205/90df2865-55e6-4300-beee-c55fd750c4ca)
 
    8. Elasticsearch is running at http://localhost:9200/
   
