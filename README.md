@@ -97,8 +97,8 @@ sudo docker ps -a
 ```
 ![docker-ps](https://github.com/pandurangbabar/magento2-docker/assets/59949205/a862aff1-d68b-4710-97d1-92aa4ccc48df)
 
-   6. Apache web server is running at http://localhost/
-  
+   6. The Apache web server is running at http://localhost/
+  ![Apache](https://github.com/pandurangbabar/magento2-docker/assets/59949205/7d18642b-d4f2-4d65-a141-369bf738413a)
 
    7. PHPMyAdmin is running at http://localhost:8080/
   
