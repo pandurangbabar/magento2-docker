@@ -104,7 +104,7 @@ sudo docker ps -a
      ![mysql](https://github.com/pandurangbabar/magento2-docker/assets/59949205/90df2865-55e6-4300-beee-c55fd750c4ca)
 
    8. Elasticsearch is running at http://localhost:9200/
-  
+  ![elastic-search](https://github.com/pandurangbabar/magento2-docker/assets/59949205/46687196-fd3b-4d73-8401-cb5c9f4af597)
 
 If the elastic search is not working please check permissions and set permissions using the below commands
 You can use the below commands to set permissions for the folder.
