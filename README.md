@@ -1,4 +1,4 @@
-# Install Magento 2 using the Docker Environment 
+# Install Magento 2 using Docker 
 
 I assume you have installed **Ubuntu 20.04.5 LTS** OS on your computer. 
 
