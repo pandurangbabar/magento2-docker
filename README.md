@@ -105,16 +105,14 @@ sudo docker ps -a
 
    8. Elasticsearch is running at http://localhost:9200/
   ![elastic-search](https://github.com/pandurangbabar/magento2-docker/assets/59949205/eaedcc8c-30a4-431e-8a37-c6310b3f0bb2)
-
-If the elastic search is not working please check permissions and set permissions using the below commands
+> [!NOTE]
+> If the elastic search is not working, please check and set permissions using the below commands.
 You can use the below commands to set permissions for the folder.
-
-
+```
 sudo chmod -R 777 magento2-docker
 sudo chown -R $USER:$USER magento2-docker
-
-
-   8. Now our Magento 2 development environment is ready. Now will install Magento 2.
+```
+Now our Magento 2 development environment is ready. Now we will install Magento 2.
 ## 4. Install Magento 2 ##
    1. Go to the web container using the below command
 sudo docker exec -it web /bin/bash
@@ -127,8 +125,6 @@ rm -rf index.php
    3. Get magento metapackage using the below command
  composer create-project --repository-url=https://repo.magento.com/ magento/project-community-edition .
   
-
-
 
    4. When prompted, enter your Magento authentication keys. For more information check this URL https://devdocs.magento.com/guides/v2.3/install-gde/composer.html
    5. Set file permissions using below commands
