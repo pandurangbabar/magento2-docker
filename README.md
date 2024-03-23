@@ -97,13 +97,13 @@ sudo docker ps -a
 ```
 ![docker-ps](https://github.com/pandurangbabar/magento2-docker/assets/59949205/a862aff1-d68b-4710-97d1-92aa4ccc48df)
 
-   6. The Apache web server is running at http://localhost/
+The Apache web server is running at http://localhost/
   ![Apache](https://github.com/pandurangbabar/magento2-docker/assets/59949205/7d18642b-d4f2-4d65-a141-369bf738413a)
 
-   7. PHPMyAdmin is running at http://localhost:8080/
+PHPMyAdmin is running at http://localhost:8080/
      ![mysql](https://github.com/pandurangbabar/magento2-docker/assets/59949205/90df2865-55e6-4300-beee-c55fd750c4ca)
 
-   8. Elasticsearch is running at http://localhost:9200/
+Elasticsearch is running at http://localhost:9200/
   ![elastic-search](https://github.com/pandurangbabar/magento2-docker/assets/59949205/eaedcc8c-30a4-431e-8a37-c6310b3f0bb2)
 > [!NOTE]
 > If the elastic search is not working, please check and set permissions using the below commands.
@@ -115,33 +115,33 @@ sudo chown -R $USER:$USER magento2-docker
 Now our Magento 2 development environment is ready. Now we will install Magento 2.
 ## 4. Install Magento 2 ##
    1. Go to the web container using the below command
+```
 sudo docker exec -it web /bin/bash
-  
-
+```
    2. Remove the index.php file using the below command
+```
 rm -rf index.php
-
+```
 
    3. Get magento metapackage using the below command
+```
  composer create-project --repository-url=https://repo.magento.com/ magento/project-community-edition .
-  
-
-   4. When prompted, enter your Magento authentication keys. For more information check this URL https://devdocs.magento.com/guides/v2.3/install-gde/composer.html
-   5. Set file permissions using below commands
+``` 
+  4. When prompted, enter your Magento authentication keys. For more information check this URL https://devdocs.magento.com/guides/v2.3/install-gde/composer.html
+  5. Set file permissions using the below commands
+```
 cd /var/www/html
 find var generated vendor pub/static pub/media app/etc -type f -exec chmod g+w {} +
 find var generated vendor pub/static pub/media app/etc -type d -exec chmod g+ws {} +
 chown -R :www-data . # Ubuntu
 chmod u+x bin/magento
-  
-
-
-
-   6. There is a bug in the Magento 2.4.6 installation using Elastic Search 8. To fix this issue we need to run the below commands. 
+```  
+ 6. There is a bug in the Magento 2.4.6 installation using Elastic Search. To fix this issue we need to run the below commands.
+```
 composer require magento/module-elasticsearch-8 --with-all-dependencies
-
-
-   7. Install Magento using the below command
+```
+7. Install Magento using the below command
+```
 php bin/magento setup:install \
 --base-url=http://localhost/ \
 --db-host=db \
@@ -159,25 +159,26 @@ php bin/magento setup:install \
 --use-rewrites=1 \
 --search-engine=elasticsearch8 \
 --disable-modules=Magento_InventoryElasticsearch,Magento_Elasticsearch8,Magento_Elasticsearch,Magento_OpenSearch
-
-
-   8. After setup is done, enable modules again (Dont enable Magento_OpenSearch again):
+```
+8. After setup is done, enable modules again (Dont enable Magento_OpenSearch again):
+```
 php bin/magento module:enable Magento_InventoryElasticsearch Magento_Elasticsearch8 Magento_Elasticsearch
-   9. Change default search engine to elasticsearch 8
+```
+9. Change default search engine to elasticsearch 8
+```
 php bin/magento config:set catalog/search/engine 'elasticsearch8'
 php bin/magento config:set catalog/search/elasticsearch8_server_hostname 'elasticsearch'
 php bin/magento config:set catalog/search/elasticsearch8_server_port '9200'
-
-
-   10. Run below commands.
+```
+   16. Run below commands.
+```
 php bin/magento cache: flush
 php bin/magento deploy:mode: set developer
 php bin/magento setup:upgrade
 php bin/magento setup:di:compile
 php bin/magento setup:static-content: deploy -f
 php bin/magento indexer: reindex
-
-
+```
 Now magento installation is complete.
 ## 5. Test frontend and backend ##
    1. Frontend URL - http://localhost/
