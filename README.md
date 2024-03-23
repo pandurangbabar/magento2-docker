@@ -181,8 +181,7 @@ php bin/magento indexer: reindex
 ```
 Now magento installation is complete.
 ## 5. Test frontend and backend ##
-   1. Frontend URL - http://localhost/
-Backend URL - http://localhost/admin_1kdhtd
+* Frontend URL - http://localhost/
+* Backend URL - http://localhost/admin_1kdhtd
 
-
-6. Thank You.
+Thank You.
