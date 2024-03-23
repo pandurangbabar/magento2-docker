@@ -1,9 +1,3 @@
-I am an expert Magento 2 developer with 10+ years of experience. 
-Please feel free to contact me, If you need Magento 2 development help.
-
-Email: pandurangmbabar5@gamil.com
-Skype: live:pandurang.babar
-
 # Install Magento 2 using the Docker Environment 
 
 I assume you have installed **Ubuntu 20.04.5 LTS** OS on your computer. 
