@@ -1,8 +1,8 @@
 I am an expert Magento 2 developer with 10+ years of experience. 
 Please feel free to contact me, If you need Magento 2 development help.
 
-Email - pandurangmbabar5@gamil.com
-Skype - live:pandurang.babar
+Email: pandurangmbabar5@gamil.com
+Skype: live:pandurang.babar
 
 # Install Magento 2 using the Docker Environment 
 
