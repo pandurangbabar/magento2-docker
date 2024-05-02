@@ -35,8 +35,9 @@ RUN apt-get update \
 	&& apt-get clean
 
 # Install Composer
-
-RUN	curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin/ --filename=composer
+RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
+RUN php composer-setup.php --install-dir=/usr/local/bin/ --filename=composer --version=2.7.4
+RUN php -r "unlink('composer-setup.php');"
 
 #PHP configuration for magento 2
 RUN docker-php-ext-configure gd --with-jpeg=/usr/include/ --with-freetype=/usr/include/;
