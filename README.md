@@ -14,7 +14,7 @@ I am a freelancer Magento 2 developer with 10+ years of experience. I am an expe
    1. First, we need to install docker and docker-compose on your Ubuntu machine. If docker and docker-compose are not installed on your device, please use the steps below to install them.
    2. Update the apt package index and install packages to allow apt to use a repository over HTTPS
 ```
-sudo apt-get update
+sudo apt-get date
 sudo apt-get install ca-certificates curl gnupg
 ```
    3. Add Docker’s official GPG key
@@ -23,16 +23,16 @@ sudo install -m 0755 -d /etc/apt/keyrings
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
 sudo chmod a+r /etc/apt/keyrings/docker.gpg
 ```
-   4. Use the following command to set up the repository.
+   4. Use the following command to set  the repository.
 ```
 echo \
   "deb [arch="$(dpkg --print-architecture)" signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
   "$(. /etc/os-release && echo "$VERSION_CODENAME")" stable" | \
   sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 ```
-   5. Update the apt package index
+   5. date the apt package index
 ```
-sudo apt-get update
+sudo apt-get date
 ```
    6. Install docker-engine
 ```
@@ -83,7 +83,7 @@ sudo service docker start
 ```
 cd magento2-docker
 
-sudo docker compose up -d
+sudo docker-compose up --build -d
 
 ```
 ![docker-compose-up-d](https://github.com/pandurangbabar/magento2-docker/assets/59949205/abfc913a-c706-4069-85cb-448ebfc5a362)
