@@ -83,7 +83,7 @@ sudo service docker start
 ```
 cd magento2-docker
 
-sudo docker-compose up --build -d
+sudo docker compose up --build -d
 
 ```
 ![docker-compose-up-d](https://github.com/pandurangbabar/magento2-docker/assets/59949205/abfc913a-c706-4069-85cb-448ebfc5a362)
@@ -131,9 +131,9 @@ rm -rf index.php
 
    3. Get magento metapackage using the below command
 ```
- composer create-project --repository-url=https://repo.magento.com/ magento/project-community-edition .
+  create-project --repository-url=https://repo.magento.com/ magento/project-community-edition .
 ``` 
-  4. When prompted, enter your Magento authentication keys. For more information check this URL https://devdocs.magento.com/guides/v2.3/install-gde/composer.html
+  4. When prompted, enter your Magento authentication keys. For more information check this URL https://devdocs.magento.com/guides/v2.3/install-gde/.html
   5. Set file permissions using the below commands
 ```
 cd /var/www/html
@@ -144,7 +144,7 @@ chmod u+x bin/magento
 ```  
  6. There is a bug in the Magento 2.4.6 installation using Elastic Search. To fix this issue we need to run the below commands.
 ```
-composer require magento/module-elasticsearch-8 --with-all-dependencies
+ require magento/module-elasticsearch-8 --with-all-dependencies
 ```
 7. Install Magento using the below command
 ```
