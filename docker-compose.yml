@@ -15,7 +15,7 @@ services:
     networks:
       - magento2-docker-network
   db:
-    image: mysql:8.0
+    image: mariadb:10.6
     container_name: db
     ports:
       - "3306:3306"
@@ -29,36 +29,19 @@ services:
     networks:
       - magento2-docker-network
 
-  # phpmyadmin:
-  #   image: phpmyadmin/phpmyadmin
-  #   environment:
-  #    - PMA_HOST=db
-  #    - MYSQL_ROOT_PASSWORD=password
-  #   ports:
-  #    - 8080:80
-  #   depends_on:
-  #     - db
-  #   networks:
-  #       - magento2-docker-network
-
-  # elasticsearch:
-  #   image: docker.elastic.co/elasticsearch/elasticsearch:8.5.3
-  #   environment:
-  #     - cluster.name=docker-cluster
-  #     - discovery.type=single-node
-  #     - ES_JAVA_OPTS=-Xms1g -Xmx1g
-  #     - xpack.security.enabled=false
-  #     - bootstrap.memory_lock=true
-  #   ulimits:
-  #     memlock:
-  #       soft: -1
-  #       hard: -1
-  #   volumes:
-  #     - ./es_data:/usr/share/elasticsearch/data
-  #   ports:
-  #     - 9200:9200
-  #   networks:
-  #     - magento2-docker-network
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    environment:
+     - PMA_HOST=db
+     - MYSQL_ROOT_PASSWORD=password
+    ports:
+     - 8080:80
+    depends_on:
+      - db
+    links:
+      - db
+    networks:
+        - magento2-docker-network
 
   opensearch-node1:
     image: opensearchproject/opensearch:2.12.0
@@ -126,19 +109,20 @@ services:
     networks:
       - magento2-docker-network
 
-  # rabbitmq:
-  #   image: rabbitmq:3.11-management
-  #   container_name: rabbitmq
-  #   environment:
-  #     - RABBITMQ_DEFAULT_USER=myuser
-  #     - RABBITMQ_DEFAULT_PASS=mypassword
-  #   ports:
-  #     # AMQP protocol port
-  #     - '5672:5672'
-  #     # HTTP management UI
-  #     - '15672:15672'
-  #   networks:
-  #     - magento2-docker-network       
+  rabbitmq:
+    image: rabbitmq:3.11-management
+    container_name: rabbitmq
+    environment:
+      - RABBITMQ_DEFAULT_USER=myuser
+      - RABBITMQ_DEFAULT_PASS=mypassword
+    ports:
+      # AMQP protocol port
+      - '5672:5672'
+      # HTTP management UI
+      - '15672:15672'
+    networks:
+      - magento2-docker-network    
+
 volumes:
   opensearch-data1:
   opensearch-data2:
