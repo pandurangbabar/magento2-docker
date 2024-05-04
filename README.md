@@ -2,7 +2,7 @@
 
 I assume you have installed **Ubuntu 20.04.5 LTS** OS on your computer. 
 
-I installed and tested this repository for the **Magento 2.4.7-beta1** version.
+I installed and tested this repository for the **Magento 2.4.7** version.
 
 ## About me ##
 I am a freelancer Magento 2 developer with 10+ years of experience. I am an expert in Magento 2 extension development. I have developed 25+ Magento 2 extensions. Please feel free to contact me, if you need Magento 2 development help.
@@ -14,7 +14,7 @@ I am a freelancer Magento 2 developer with 10+ years of experience. I am an expe
    1. First, we need to install docker and docker-compose on your Ubuntu machine. If docker and docker-compose are not installed on your device, please use the steps below to install them.
    2. Update the apt package index and install packages to allow apt to use a repository over HTTPS
 ```
-sudo apt-get update
+sudo apt-get date
 sudo apt-get install ca-certificates curl gnupg
 ```
    3. Add Docker’s official GPG key
@@ -23,16 +23,16 @@ sudo install -m 0755 -d /etc/apt/keyrings
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
 sudo chmod a+r /etc/apt/keyrings/docker.gpg
 ```
-   4. Use the following command to set up the repository.
+   4. Use the following command to set  the repository.
 ```
 echo \
   "deb [arch="$(dpkg --print-architecture)" signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
   "$(. /etc/os-release && echo "$VERSION_CODENAME")" stable" | \
   sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 ```
-   5. Update the apt package index
+   5. date the apt package index
 ```
-sudo apt-get update
+sudo apt-get date
 ```
    6. Install docker-engine
 ```
@@ -45,7 +45,33 @@ sudo docker run hello-world
    8. For more information on how to install the Docker engine on Ubuntu use this link.
 https://docs.docker.com/engine/install/ubuntu/
 
-## 2. Take a clone of the Magento 2 Docker repository ##
+## 2. Install Mkcert ##
+ 1. Install the required packages
+```
+apt-get install wget libnss3-tools
+```
+2. Download the latest version of Mkcert from Github.
+ ```
+wget https://github.com/FiloSottile/mkcert/releases/download/v1.4.3/mkcert-v1.4.3-linux-amd64
+```
+3. Move the downloaded binary to the system path.
+```
+mv mkcert-v1.4.3-linux-amd64 /usr/bin/mkcert
+```
+```
+chmod +x /usr/bin/mkcert
+```
+4. Generate Local CA.
+```
+mkcert -install
+```
+5. Generate a Certificate for Local Website.
+   ```
+   mkcert local.m2docker localhost 127.0.0.1 ::1
+   ```
+6. Copy certificates in the folder .docker/ssl and rename them as cert.pem cert-key.pem 
+
+## 3. Take a clone of the Magento 2 Docker repository ##
    1. Take a clone of the Magento 2 Docker repository from  
 https://github.com/pandurangbabar/magento2-docker
  
@@ -63,7 +89,7 @@ sudo chmod -R 777 magento2-docker
 sudo chown -R $USER:$USER magento2-docker
 ```
 
-## 3. Create docker environment ##
+## 4. Create docker environment ##
    1. If you have installed apache2 and MySQL on your system, then we need to stop both services. We need to stop these services because there will be a port conflict when we run these services using a docker container. Please use the below commands to stop the apach2 and mysql service.
 ```
 sudo service mysql stop
@@ -83,7 +109,7 @@ sudo service docker start
 ```
 cd magento2-docker
 
-sudo docker compose up -d
+sudo docker compose up --build -d
 
 ```
 ![docker-compose-up-d](https://github.com/pandurangbabar/magento2-docker/assets/59949205/abfc913a-c706-4069-85cb-448ebfc5a362)
@@ -119,7 +145,7 @@ sudo chmod -R 777 magento2-docker
 sudo chown -R $USER:$USER magento2-docker
 ```
 Now our Magento 2 development environment is ready. Now we will install Magento 2.
-## 4. Install Magento 2 ##
+## 5. Install Magento 2 ##
    1. Go to the web container using the below command
 ```
 sudo docker exec -it web /bin/bash
@@ -131,9 +157,9 @@ rm -rf index.php
 
    3. Get magento metapackage using the below command
 ```
- composer create-project --repository-url=https://repo.magento.com/ magento/project-community-edition .
+  create-project --repository-url=https://repo.magento.com/ magento/project-community-edition .
 ``` 
-  4. When prompted, enter your Magento authentication keys. For more information check this URL https://devdocs.magento.com/guides/v2.3/install-gde/composer.html
+  4. When prompted, enter your Magento authentication keys. For more information check this URL https://devdocs.magento.com/guides/v2.3/install-gde/.html
   5. Set file permissions using the below commands
 ```
 cd /var/www/html
@@ -144,7 +170,7 @@ chmod u+x bin/magento
 ```  
  6. There is a bug in the Magento 2.4.6 installation using Elastic Search. To fix this issue we need to run the below commands.
 ```
-composer require magento/module-elasticsearch-8 --with-all-dependencies
+ require magento/module-elasticsearch-8 --with-all-dependencies
 ```
 7. Install Magento using the below command
 ```
@@ -186,7 +212,7 @@ php bin/magento setup:static-content: deploy -f
 php bin/magento indexer: reindex
 ```
 Now magento installation is complete.
-## 5. Test frontend and backend ##
+## 6. Test frontend and backend ##
 * Frontend URL - http://localhost/
 * Backend URL - http://localhost/admin_1kdhtd
 
