@@ -201,13 +201,8 @@ php bin/magento module:disable Magento_AdminAdobeImsTwoFactorAuth
 php bin/magento module:disable Magento_TwoFactorAuth
 php bin/magento cache:flush 
 ```
-9. Change default search engine to elasticsearch 8
 ```
-php bin/magento config:set catalog/search/engine 'elasticsearch8'
-php bin/magento config:set catalog/search/elasticsearch8_server_hostname 'elasticsearch'
-php bin/magento config:set catalog/search/elasticsearch8_server_port '9200'
-```
-   16. Run below commands.
+9. Run below commands.
 ```
 php bin/magento cache: flush
 php bin/magento deploy:mode: set developer
@@ -219,6 +214,6 @@ php bin/magento indexer: reindex
 Now magento installation is complete.
 ## 6. Test frontend and backend ##
 * Frontend URL - http://localhost/
-* Backend URL - http://localhost/admin_1kdhtd
+* Backend URL - When installation complete copy backend url from screen
 
 Thank You.
