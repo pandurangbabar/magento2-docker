@@ -195,9 +195,11 @@ php bin/magento setup:install \
 --opensearch-index-prefix=magento2 \
 --opensearch-timeout=15
 ```
-8. After setup is done, enable modules again (Dont enable Magento_OpenSearch again):
+8. Disable Two factor Authentication module in Magento
 ```
-php bin/magento module:enable Magento_InventoryElasticsearch Magento_Elasticsearch8 Magento_Elasticsearch
+php bin/magento module:disable Magento_AdminAdobeImsTwoFactorAuth 
+php bin/magento module:disable Magento_TwoFactorAuth
+php bin/magento cache:flush 
 ```
 9. Change default search engine to elasticsearch 8
 ```
