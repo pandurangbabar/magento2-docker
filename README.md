@@ -201,7 +201,7 @@ php bin/magento module:disable Magento_AdminAdobeImsTwoFactorAuth
 php bin/magento module:disable Magento_TwoFactorAuth
 php bin/magento cache:flush 
 ```
-```
+
 9. Run below commands.
 ```
 php bin/magento cache: flush
@@ -210,6 +210,7 @@ php bin/magento setup:upgrade
 php bin/magento setup:di:compile
 php bin/magento setup:static-content: deploy -f
 php bin/magento indexer: reindex
+
 ```
 Now magento installation is complete.
 ## 6. Test frontend and backend ##
