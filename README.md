@@ -190,7 +190,7 @@ php bin/magento setup:install \
 --timezone=America/Chicago \
 --use-rewrites=1 \
 --search-engine=opensearch \
---opensearch-host=localhost \
+--opensearch-host=opensearch-node1 \
 --opensearch-port=9200 \
 --opensearch-index-prefix=magento2 \
 --opensearch-timeout=15
