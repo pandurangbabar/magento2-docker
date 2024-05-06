@@ -175,22 +175,25 @@ chmod u+x bin/magento
 7. Install Magento using the below command
 ```
 php bin/magento setup:install \
---base-url=http://localhost/ \
+--base-url=http://localhost \
 --db-host=db \
 --db-name=magento \
 --db-user=magento \
 --db-password=magento \
---admin-firstname=admin \
---admin-lastname=admin \
---admin-email=admin@admin.com \
+--admin-firstname=pandurang \
+--admin-lastname=babar \
+--admin-email=pndurangmbabar5@gmail.com \
 --admin-user=admin \
---admin-password=admin123 \
+--admin-password=admin@123 \
 --language=en_US \
 --currency=USD \
 --timezone=America/Chicago \
 --use-rewrites=1 \
---search-engine=elasticsearch8 \
---disable-modules=Magento_InventoryElasticsearch,Magento_Elasticsearch8,Magento_Elasticsearch,Magento_OpenSearch
+--search-engine=opensearch \
+--opensearch-host=localhost \
+--opensearch-port=9200 \
+--opensearch-index-prefix=magento2 \
+--opensearch-timeout=15
 ```
 8. After setup is done, enable modules again (Dont enable Magento_OpenSearch again):
 ```
