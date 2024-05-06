@@ -6,6 +6,7 @@ services:
     container_name: web
     ports:
       - "80:80"
+      - "443:443"
     volumes:
       - ./src:/var/www/html
     depends_on:
@@ -15,7 +16,7 @@ services:
     networks:
       - magento2-docker-network
   db:
-    image: mysql:8.0
+    image: mariadb:10.6
     container_name: db
     ports:
       - "3306:3306"
@@ -38,25 +39,74 @@ services:
      - 8080:80
     depends_on:
       - db
+    links:
+      - db
     networks:
         - magento2-docker-network
 
-  elasticsearch:
-    image: docker.elastic.co/elasticsearch/elasticsearch:8.5.3
+  opensearch-node1:
+    image: opensearchproject/opensearch:2.12.0
+    container_name: opensearch-node1
     environment:
-      - cluster.name=docker-cluster
-      - discovery.type=single-node
-      - ES_JAVA_OPTS=-Xms1g -Xmx1g
-      - xpack.security.enabled=false
+      - cluster.name=opensearch-cluster
+      - node.name=opensearch-node1
+      - discovery.seed_hosts=opensearch-node1,opensearch-node2
+      - cluster.initial_cluster_manager_nodes=opensearch-node1,opensearch-node2
       - bootstrap.memory_lock=true
+      - "OPENSEARCH_JAVA_OPTS=-Xms512m -Xmx512m"
+      - "DISABLE_INSTALL_DEMO_CONFIG=true"
+      - "DISABLE_SECURITY_PLUGIN=true"
+      - OPENSEARCH_INITIAL_ADMIN_PASSWORD=admin
+    ulimits:
+      memlock:
+        soft: -1 
+        hard: -1
+      nofile:
+        soft: 65536 
+        hard: 65536
+    volumes:
+      - opensearch-data1:/usr/share/opensearch/data 
+    ports:
+      - 9200:9200
+      - 9600:9600
+    networks:
+      - magento2-docker-network
+
+  opensearch-node2:
+    image: opensearchproject/opensearch:2.12.0
+    container_name: opensearch-node2
+    environment:
+      - cluster.name=opensearch-cluster
+      - node.name=opensearch-node2
+      - discovery.seed_hosts=opensearch-node1,opensearch-node2
+      - cluster.initial_cluster_manager_nodes=opensearch-node1,opensearch-node2
+      - bootstrap.memory_lock=true
+      - "OPENSEARCH_JAVA_OPTS=-Xms512m -Xmx512m"
+      - "DISABLE_INSTALL_DEMO_CONFIG=true"
+      - "DISABLE_SECURITY_PLUGIN=true"
+      - OPENSEARCH_INITIAL_ADMIN_PASSWORD=admin
     ulimits:
       memlock:
         soft: -1
         hard: -1
+      nofile:
+        soft: 65536
+        hard: 65536
     volumes:
-      - ./es_data:/usr/share/elasticsearch/data
+      - opensearch-data2:/usr/share/opensearch/data
+    networks:
+      - magento2-docker-network
+
+  opensearch-dashboards:
+    image: opensearchproject/opensearch-dashboards:latest
+    container_name: opensearch-dashboards
     ports:
-      - 9200:9200
+      - 5601:5601
+    expose:
+      - "5601"
+    environment:
+      - 'OPENSEARCH_HOSTS=["http://opensearch-node1:9200","http://opensearch-node2:9200"]'
+      - "DISABLE_SECURITY_DASHBOARDS_PLUGIN=true"
     networks:
       - magento2-docker-network
 
@@ -72,7 +122,11 @@ services:
       # HTTP management UI
       - '15672:15672'
     networks:
-      - magento2-docker-network       
+      - magento2-docker-network    
+
+volumes:
+  opensearch-data1:
+  opensearch-data2:
 
 networks:
   magento2-docker-network:

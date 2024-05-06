@@ -35,8 +35,9 @@ RUN apt-get update \
 	&& apt-get clean
 
 # Install Composer
-
-RUN	curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin/ --filename=composer
+RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
+RUN php composer-setup.php --install-dir=/usr/local/bin/ --filename=composer --version=2.7.4
+RUN php -r "unlink('composer-setup.php');"
 
 #PHP configuration for magento 2
 RUN docker-php-ext-configure gd --with-jpeg=/usr/include/ --with-freetype=/usr/include/;
@@ -49,13 +50,19 @@ RUN	a2enmod expires
 RUN	a2enmod headers
 RUN	a2enmod ssl
 
-ADD .docker/apache/local.m2docker.conf /etc/apache2/sites-available/local.m2docker.conf
-RUN ln -s /etc/apache2/sites-available/local.m2docker.conf /etc/apache2/sites-enabled/local.m2docker.conf
-
 ADD .docker/php/php.ini /usr/local/etc/php/php.ini
+
+RUN mkdir -p /etc/apache2/ssl
+COPY .docker/ssl/*.pem /etc/apache2/ssl/
+COPY .docker/apache/000-default.conf /etc/apache2/sites-available/000-default.conf
+COPY .docker/apache/local.m2docker.conf /etc/apache2/sites-available/local.m2docker.conf
+COPY .docker/apache/local.m2docker-ssl.conf /etc/apache2/sites-available/local.m2docker-ssl.conf
 
 RUN service apache2 restart
 
 VOLUME /var/www/html
 WORKDIR /var/www/html
+
+EXPOSE 80
+EXPOSE 443
 
