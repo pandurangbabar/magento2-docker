@@ -150,17 +150,12 @@ Now our Magento 2 development environment is ready. Now we will install Magento 
 ```
 sudo docker exec -it web /bin/bash
 ```
-   2. Remove the index.php file using the below command
-```
-rm -rf index.php
-```
-
-   3. Get magento metapackage using the below command
+   2. Get magento metapackage using the below command
 ```
  composer create-project --repository-url=https://repo.magento.com/ magento/project-community-edition .
 ``` 
-  4. When prompted, enter your Magento authentication keys. For more information check this URL https://devdocs.magento.com/guides/v2.3/install-gde/.html
-  5. Set file permissions using the below commands
+  3. When prompted, enter your Magento authentication keys. For more information check this URL https://devdocs.magento.com/guides/v2.3/install-gde/.html
+  4. Set file permissions using the below commands
 ```
 cd /var/www/html
 find var generated vendor pub/static pub/media app/etc -type f -exec chmod g+w {} +
@@ -168,11 +163,7 @@ find var generated vendor pub/static pub/media app/etc -type d -exec chmod g+ws 
 chown -R :www-data . # Ubuntu
 chmod u+x bin/magento
 ```  
- 6. There is a bug in the Magento 2.4.6 installation using Elastic Search. To fix this issue we need to run the below commands.
-```
- require magento/module-elasticsearch-8 --with-all-dependencies
-```
-7. Install Magento using the below command
+5. Install Magento using the below command
 ```
 php bin/magento setup:install \
 --base-url=http://localhost \
@@ -195,14 +186,14 @@ php bin/magento setup:install \
 --opensearch-index-prefix=magento2 \
 --opensearch-timeout=15
 ```
-8. Disable Two factor Authentication module in Magento
+6. Disable Two factor Authentication module in Magento
 ```
 php bin/magento module:disable Magento_AdminAdobeImsTwoFactorAuth 
 php bin/magento module:disable Magento_TwoFactorAuth
 php bin/magento cache:flush 
 ```
 
-9. Run below commands.
+7. Run below commands.
 ```
 php bin/magento cache:flush
 php bin/magento deploy:mode:set developer
