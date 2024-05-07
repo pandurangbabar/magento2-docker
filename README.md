@@ -135,10 +135,10 @@ The Apache web server is running at http://localhost/
 PHPMyAdmin is running at http://localhost:8080/
      ![mysql](https://github.com/pandurangbabar/magento2-docker/assets/59949205/90df2865-55e6-4300-beee-c55fd750c4ca)
 
-Elasticsearch is running at http://localhost:9200/
-  ![elastic-search](https://github.com/pandurangbabar/magento2-docker/assets/59949205/eaedcc8c-30a4-431e-8a37-c6310b3f0bb2)
+Opensearch is running at http://localhost:9200/
+ ![1](https://github.com/pandurangbabar/magento2-docker/assets/59949205/74316423-3e54-4c86-aa3e-0826cb6cbad9)
 > [!NOTE]
-> If the elastic search is not working, please check and set permissions using the below commands.
+> If the opensearch search is not working, please check and set permissions using the below commands.
 You can use the below commands to set permissions for the folder.
 ```
 sudo chmod -R 777 magento2-docker
