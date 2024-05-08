@@ -124,7 +124,7 @@ Stop and remove all containers.
 
 4. We can make sure all the containers are running fine using the command
 ```
-sudo docker ps -a
+sudo docker ps
 
 ```
 ![1](https://github.com/pandurangbabar/magento2-docker/assets/59949205/55d15688-df65-43f2-985c-be49655da3ab)
