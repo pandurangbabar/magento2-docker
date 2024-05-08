@@ -119,6 +119,13 @@ sudo docker compose up --build -d
 We can use 
 ```
 sudo docker compose down
+```
+Stops running containers without removing them They can be started again with 
+```
+sudo docker compose start
+```
+```
+sudo docker compose down
 
 ```
 Stop and remove all containers.
