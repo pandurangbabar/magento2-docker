@@ -127,7 +127,7 @@ Stop and remove all containers.
 sudo docker ps -a
 
 ```
-![docker-ps](https://github.com/pandurangbabar/magento2-docker/assets/59949205/a862aff1-d68b-4710-97d1-92aa4ccc48df)
+![1](https://github.com/pandurangbabar/magento2-docker/assets/59949205/55d15688-df65-43f2-985c-be49655da3ab)
 
 The Apache web server is running at http://localhost/
   ![1](https://github.com/pandurangbabar/magento2-docker/assets/59949205/29be9257-7ffe-4a49-91b8-e3bf1fae9892)
