@@ -120,7 +120,7 @@ We can use
 ```
 sudo docker compose down
 ```
-Stops running containers without removing them They can be started again with 
+Stops running containers without removing them. They can be started again with 
 ```
 sudo docker compose start
 ```
