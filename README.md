@@ -43,7 +43,7 @@ sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin 
 sudo docker run hello-world
 ```
    8. For more information on how to install the Docker engine on Ubuntu use this link.
-https://docs.docker.com/engine/install/ubuntu/<br/>https://docs.docker.com/engine/install/ubuntu/#install-using-the-repository
+<br/>https://docs.docker.com/engine/install/ubuntu/<br/>https://docs.docker.com/engine/install/ubuntu/#install-using-the-repository
 
 ## 2. Install Mkcert  ##
 > [!NOTE]
