@@ -11,10 +11,10 @@ I am a freelancer Magento 2 developer with 10+ years of experience. I am an expe
 * Skype - live:pandurang.babar
 
 ## 1. Docker and Docker-Compose ##
-   1. First, we need to install docker and docker-compose on your Ubuntu machine. If docker and docker-compose are not installed on your device, please use the steps below to install them.
+   1. First, we must install docker and docker-compose on your Ubuntu machine. If docker and docker-compose are not installed on your device, please use the steps below to install them.
    2. Update the apt package index and install packages to allow apt to use a repository over HTTPS
 ```
-sudo apt-get date
+sudo apt-get update
 sudo apt-get install ca-certificates curl gnupg
 ```
    3. Add Docker’s official GPG key
@@ -27,12 +27,12 @@ sudo chmod a+r /etc/apt/keyrings/docker.gpg
 ```
 echo \
   "deb [arch="$(dpkg --print-architecture)" signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
-  "$(. /etc/os-release && echo "$VERSION_CODENAME")" stable" | \
+  "$(. /etc/os-release && echo "$UBUNTU_CODENAME")" stable" | \
   sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 ```
-   5. date the apt package index
+   5. Update the apt package index
 ```
-sudo apt-get date
+sudo apt-get update
 ```
    6. Install docker-engine
 ```
@@ -44,6 +44,7 @@ sudo docker run hello-world
 ```
    8. For more information on how to install the Docker engine on Ubuntu use this link.
 https://docs.docker.com/engine/install/ubuntu/
+https://docs.docker.com/engine/install/ubuntu/#install-using-the-repository
 
 ## 2. Install Mkcert  ##
 > [!NOTE]
