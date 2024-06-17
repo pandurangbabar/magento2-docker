@@ -1,11 +1,12 @@
 # Install Magento 2 using Docker 
 
-I assume you have installed **Ubuntu 20.04.5 LTS** OS on your computer. 
+I assume you have installed **Ubuntu 24.04 LTS** OS on your computer. 
 
-I installed and tested this repository for the **Magento 2.4.7** version.
+I installed and tested this repository for the **Magento 2.4.7-p1** version.
 
 ## About me ##
-I am a freelancer Magento 2 developer with 10+ years of experience. I am an expert in Magento 2 extension development. I have developed 25+ Magento 2 extensions. Please feel free to contact me, if you need Magento 2 development help.
+I am a Magento 2 developer with 10+ years of experience in Magento 2, PHP, JavaScript, CSS, and MySQL.
+. Please feel free to contact me, if you need Magento 2 development help.
 
 * Email - pandurangmbabar5@gamil.com
 * Skype - live:pandurang.babar
