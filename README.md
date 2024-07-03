@@ -163,7 +163,7 @@ sudo rm -rf src/index.php
 ```
    2. Get magento metapackage using the below command
 ```
- composer create-project --repository-url=https://repo.magento.com/ magento/project-community-edition .
+ composer create-project --repository-url=https://repo.magento.com/ magento/project-community-edition:2.4.7-p1 .
 ``` 
   3. When prompted, enter your Magento authentication keys. For more information check this URL https://devdocs.magento.com/guides/v2.3/install-gde/.html
   4. Set file permissions using the below commands
