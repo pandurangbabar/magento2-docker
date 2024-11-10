@@ -151,6 +151,12 @@ php bin/magento config:set catalog/search/opensearch_server_hostname opensearch-
 php bin/magento config:set catalog/search/opensearch_server_port 9200
 php bin/magento cache:flush
 ```
+### Set Base url 
+```
+SELECT * FROM `core_config_data` WHERE `path` LIKE '%base_url%';
+UPDATE core_config_data SET value = 'http://localhost/' WHERE path = 'web/unsecure/base_url';
+UPDATE core_config_data SET value = 'http://localhost/' WHERE path = 'web/secure/base_url';
+```
 5. Install Magento using the below command
 ```
 php bin/magento setup:install \
