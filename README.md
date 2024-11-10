@@ -144,7 +144,13 @@ find var generated vendor pub/static pub/media app/etc -type f -exec chmod g+w {
 find var generated vendor pub/static pub/media app/etc -type d -exec chmod g+ws {} +
 chown -R :www-data . # Ubuntu
 chmod u+x bin/magento
-```  
+```
+### Set opensearch 
+```
+php bin/magento config:set catalog/search/opensearch_server_hostname opensearch-node1
+php bin/magento config:set catalog/search/opensearch_server_port 9200
+php bin/magento cache:flush
+```
 5. Install Magento using the below command
 ```
 php bin/magento setup:install \
