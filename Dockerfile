@@ -52,11 +52,8 @@ RUN	a2enmod ssl
 
 ADD .docker/php/php.ini /usr/local/etc/php/php.ini
 
-RUN mkdir -p /etc/apache2/ssl
-COPY .docker/ssl/*.pem /etc/apache2/ssl/
 COPY .docker/apache/000-default.conf /etc/apache2/sites-available/000-default.conf
 COPY .docker/apache/local.m2docker.conf /etc/apache2/sites-available/local.m2docker.conf
-COPY .docker/apache/local.m2docker-ssl.conf /etc/apache2/sites-available/local.m2docker-ssl.conf
 
 RUN service apache2 restart
 
