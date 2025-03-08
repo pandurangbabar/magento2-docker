@@ -202,4 +202,18 @@ Now magento installation is complete.
 * Frontend URL - http://localhost/
 * Backend URL - When installation complete copy backend url from screen
 
+
+> [!NOTE]
+If you have installed multiple Magento 2 projects using this docker repository. Use below commands to stop current project start new project.
+1. Stop current project
+```
+docker compose down
+
+```
+2. Start new project
+```
+docker compose build --no-cache
+docker compose up -d
+
+```
 Thank You.
