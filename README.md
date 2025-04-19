@@ -162,7 +162,7 @@ UPDATE core_config_data SET value = 'http://localhost/' WHERE path = 'web/secure
 ```
 5. Install Magento using the below command
 > [!NOTE]
-> If you want to install sample data please run below command before Magento 2 installation.
+> If you want to install sample data, please run below command before Magento 2 installation.
 
 ```
 bin/magento sampledata:deploy
