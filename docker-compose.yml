@@ -16,7 +16,7 @@ services:
     networks:
       - magento2-docker-network
   db:
-    image: mariadb:10.6
+    image: mariadb:11.4
     container_name: db
     ports:
       - "3306:3306"
@@ -45,7 +45,7 @@ services:
         - magento2-docker-network
 
   opensearch-node1:
-    image: opensearchproject/opensearch:2.12.0
+    image: opensearchproject/opensearch:2.19.1
     container_name: opensearch-node1
     environment:
       - cluster.name=opensearch-cluster
@@ -73,7 +73,7 @@ services:
       - magento2-docker-network
 
   opensearch-node2:
-    image: opensearchproject/opensearch:2.12.0
+    image: opensearchproject/opensearch:2.19.1
     container_name: opensearch-node2
     environment:
       - cluster.name=opensearch-cluster
@@ -111,7 +111,7 @@ services:
       - magento2-docker-network
 
   rabbitmq:
-    image: rabbitmq:3.11-management
+    image: rabbitmq:4.0-management
     container_name: rabbitmq
     environment:
       - RABBITMQ_DEFAULT_USER=myuser

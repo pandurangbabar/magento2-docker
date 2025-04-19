@@ -1,5 +1,5 @@
 # syntax=docker/dockerfile:1
-FROM php:8.2.8-apache 
+FROM php:8.4-apache 
 
 ADD https://github.com/mlocati/docker-php-extension-installer/releases/latest/download/install-php-extensions /usr/local/bin/
 RUN chmod +x /usr/local/bin/install-php-extensions
@@ -36,7 +36,7 @@ RUN apt-get update \
 
 # Install Composer
 RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
-RUN php composer-setup.php --install-dir=/usr/local/bin/ --filename=composer --version=2.7.4
+RUN php composer-setup.php --install-dir=/usr/local/bin/ --filename=composer --version=2.8.8
 RUN php -r "unlink('composer-setup.php');"
 
 #PHP configuration for magento 2
