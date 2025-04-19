@@ -41,7 +41,7 @@ RUN php -r "unlink('composer-setup.php');"
 
 #PHP configuration for magento 2
 RUN docker-php-ext-configure gd --with-jpeg=/usr/include/ --with-freetype=/usr/include/;
-RUN	install-php-extensions bcmath gd intl pdo_mysql soap opcache sockets xsl zip
+RUN	install-php-extensions bcmath gd intl pdo_mysql soap opcache sockets xsl zip ftp
 
 #Apache2 configuration for magento 2
 RUN	apt-get update
