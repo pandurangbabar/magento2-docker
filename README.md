@@ -107,16 +107,19 @@ Stop and remove all containers.
 sudo docker ps
 
 ```
-![1](https://github.com/pandurangbabar/magento2-docker/assets/59949205/55d15688-df65-43f2-985c-be49655da3ab)
+![dockerps](https://github.com/user-attachments/assets/c775052d-bed6-4d40-bd59-97c059e79644)
+
 
 The Apache web server is running at http://localhost/
-  ![1](https://github.com/pandurangbabar/magento2-docker/assets/59949205/29be9257-7ffe-4a49-91b8-e3bf1fae9892)
+  ![php](https://github.com/user-attachments/assets/aacaf26a-6eb9-4d79-ba6e-731ca5d3da01)
+
 
 PHPMyAdmin is running at http://localhost:8080/
      ![mysql](https://github.com/pandurangbabar/magento2-docker/assets/59949205/90df2865-55e6-4300-beee-c55fd750c4ca)
 
 Opensearch is running at http://localhost:9200/
- ![1](https://github.com/pandurangbabar/magento2-docker/assets/59949205/74316423-3e54-4c86-aa3e-0826cb6cbad9)
+ ![Opensearch](https://github.com/user-attachments/assets/90b1d321-6a8b-46eb-9456-1d16c698c12d)
+
 > [!NOTE]
 > If the opensearch search is not working, please check and set permissions using the below commands.
 You can use the below commands to set permissions for the folder.
@@ -128,12 +131,13 @@ Now our Magento 2 development environment is ready. Now we will install Magento 
 ## 4. Install Magento 2 ##
    1. Go to the web container using the below command
 ```
-sudo docker exec -it web /bin/bash
 sudo rm -rf src/index.php
+sudo docker exec -it web /bin/bash
+
 ```
    2. Get magento metapackage using the below command
 ```
- composer create-project --repository-url=https://repo.magento.com/ magento/project-community-edition:2.4.7-p1 .
+ composer create-project --repository-url=https://repo.magento.com/ magento/project-community-edition:2.4.8 .
 ``` 
   3. When prompted, enter your Magento authentication keys. For more information check this URL https://devdocs.magento.com/guides/v2.3/install-gde/.html
   4. Set file permissions using the below commands
