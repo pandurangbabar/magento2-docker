@@ -226,5 +226,12 @@ docker compose build --no-cache
 docker compose up -d
 
 ```
+###  Openserach issue ###
+> [!NOTE]
+if you get issue : No alive nodes found in your cluster
+- Check openserach node is running by usig below command
+```
+docker ps
 
+```
 Thank You.
