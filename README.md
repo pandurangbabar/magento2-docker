@@ -226,7 +226,7 @@ docker compose build --no-cache
 docker compose up -d
 
 ```
-###  Openserach issue ###
+####  Fix openserach issue ####
 > [!NOTE]
 if you get issue : No alive nodes found in your cluster
 - Check openserach node is running by usig below command
@@ -242,6 +242,13 @@ docker logs opensearch-node1
 - Check opensearch is running
 ```
 curl -XGET 'https://localhost:9200/_cluster/health?pretty'
+```
+- Delete opensearch vloumes
+```
+docker compose down
+docker volume ls
+docker volume rm magento2-docker_opensearch-data1
+docker volume rm magento2-docker_opensearch-data2
 ```
 
 Thank You.
