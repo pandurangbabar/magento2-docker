@@ -236,9 +236,8 @@ docker ps
 
 ```
 - Check docker container log
-  
-  ```
-  
+
+```
 docker logs opensearch-node1
 
 ```
@@ -254,12 +253,10 @@ curl -XGET 'https://localhost:9200/_cluster/health?pretty'
 - Delete opensearch vloumes
 
 ```
-
 docker compose down
 docker volume ls
 docker volume rm magento2-docker_opensearch-data1
 docker volume rm magento2-docker_opensearch-data2
-
 ```
 
 Thank You.
