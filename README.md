@@ -234,4 +234,14 @@ if you get issue : No alive nodes found in your cluster
 docker ps
 
 ```
+- Check docker container log
+  ```
+docker logs opensearch-node1
+
+```
+- Check opensearch is running
+```
+curl -XGET 'https://localhost:9200/_cluster/health?pretty'
+```
+
 Thank You.
