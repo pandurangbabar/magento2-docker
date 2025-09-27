@@ -161,6 +161,13 @@ UPDATE core_config_data SET value = 'http://localhost/' WHERE path = 'web/unsecu
 UPDATE core_config_data SET value = 'http://localhost/' WHERE path = 'web/secure/base_url';
 ```
 5. Install Magento using the below command
+> [!NOTE]
+> If you want to install sample data, please run below command before Magento 2 installation.
+
+```
+bin/magento sampledata:deploy
+
+```
 ```
 php bin/magento setup:install \
 --base-url=http://localhost \
@@ -205,7 +212,7 @@ Now magento installation is complete.
 * Frontend URL - http://localhost/
 * Backend URL - When installation complete copy backend url from screen
 
-
+##  Help to fix issues ##
 > [!NOTE]
 If you have installed multiple Magento 2 projects using this docker repository. Use below commands to stop current project start new project.
 1. Stop current project
@@ -219,4 +226,37 @@ docker compose build --no-cache
 docker compose up -d
 
 ```
+####  Fix openserach issue ####
+> [!NOTE]
+if you get issue : No alive nodes found in your cluster
+- Check openserach node is running by usig below command
+  
+```
+docker ps
+
+```
+- Check docker container log
+
+```
+docker logs opensearch-node1
+
+```
+
+- Check opensearch is running
+
+```
+
+curl -XGET 'https://localhost:9200/_cluster/health?pretty'
+
+```
+
+- Delete opensearch vloumes
+
+```
+docker compose down
+docker volume ls
+docker volume rm magento2-docker_opensearch-data1
+docker volume rm magento2-docker_opensearch-data2
+```
+
 Thank You.
