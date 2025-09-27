@@ -11,8 +11,7 @@ services:
       - ./src:/var/www/html
     depends_on:
       - db
-    links:
-      - db
+
     networks:
       - magento2-docker-network
   db:
@@ -39,8 +38,7 @@ services:
      - 8080:80
     depends_on:
       - db
-    links:
-      - db
+
     networks:
         - magento2-docker-network
 

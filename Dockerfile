@@ -7,19 +7,13 @@ RUN chmod +x /usr/local/bin/install-php-extensions
 # Install System Dependencies
 RUN apt-get update \
 	&& DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
-	software-properties-common \
 	&& apt-get update \
 	&& DEBIAN_FRONTEND=noninteractive apt-get install -y \
 	libfreetype6-dev \
 	libicu-dev \
   libssl-dev \
   libzip-dev \
-	libjpeg62-turbo-dev \
-	libmcrypt-dev \
-	libedit-dev \
-	libedit2 \
-	libxslt1-dev \
-	apt-utils \
+   	libxslt1-dev \
 	gnupg \
 	redis-tools \
 	git \
@@ -40,7 +34,7 @@ RUN php composer-setup.php --install-dir=/usr/local/bin/ --filename=composer --v
 RUN php -r "unlink('composer-setup.php');"
 
 #PHP configuration for magento 2
-RUN docker-php-ext-configure gd --with-jpeg=/usr/include/ --with-freetype=/usr/include/;
+RUN docker-php-ext-configure gd ;
 RUN	install-php-extensions bcmath gd intl pdo_mysql soap opcache sockets xsl zip ftp
 
 #Apache2 configuration for magento 2
