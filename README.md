@@ -248,7 +248,7 @@ docker logs opensearch-node1
 
 curl -XGET 'https://localhost:9200/_cluster/health?pretty'
 or
-http://localhost:9200/
+[http://localhost:9200](http://localhost/)
 
 ```
 
