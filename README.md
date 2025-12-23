@@ -50,7 +50,7 @@ Use the below command to take a clone.
 git clone https://github.com/pandurangbabar/magento2-docker.git
 ```
 > [!IMPORTANT]
-> Check the permission of folder “magento2-docker”. We need read-write permission for the folders dbdata and src.
+> Check the permission of folder “magento2-docker”. We need read-write permission for the folders docker/dbdata, docker/opensearch-data and code.
 
 2. You can use the below commands to set permissions for the folder.
 
