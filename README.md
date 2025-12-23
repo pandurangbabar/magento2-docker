@@ -3,7 +3,7 @@
 I installed and tested this repository for **Ubuntu 24.04 LTS** and **Magento 2.4.8-p3**.
 
 ## About me ##
-Hi, I am an Expert Magento 2 Freelancer Developer with 10+ years of experience. I have deep experience of Magento 2 development, customization, and bug fixing. Please feel free to contact me, if you need Magento 2 development help.
+Hi, I am an Expert Magento 2 Freelancer Developer with 10+ years of experience. I have deep experience of Magento 2 development, customization, and bug fixing. Please feel free to contact me if you need Magento 2 development help.
 * Email - pandurangmbabar5@gamil.com
 
 ## 1. Docker and Docker-Compose ##
