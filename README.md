@@ -77,7 +77,7 @@ sudo service docker start
 ```
    3. Go to the repository magento2-docker and execute the below command
 ```
-cd magento2-docker
+cd magento2-docker/docker
 
 sudo docker compose up --build -d
 
