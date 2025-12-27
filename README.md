@@ -109,7 +109,7 @@ sudo docker ps
 <img width="1848" height="874" alt="docker ps" src="https://github.com/user-attachments/assets/561cd8e0-ba75-4d34-b18d-20ffd709414a" />
 
 The Apache web server is running at http://localhost/
-  ![php](https://github.com/user-attachments/assets/aacaf26a-6eb9-4d79-ba6e-731ca5d3da01)
+<img width="1298" height="783" alt="PHP" src="https://github.com/user-attachments/assets/d4f3165f-29f2-4e46-8ce7-94f621126574" />
 
 
 PHPMyAdmin is running at http://localhost:8080/
