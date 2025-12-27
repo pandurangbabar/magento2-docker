@@ -88,7 +88,7 @@ sudo docker compose up --build -d
 
 We can use 
 ```
-sudo docker compose down
+sudo docker compose stop
 ```
 Stops running containers without removing them. They can be started again with 
 ```
