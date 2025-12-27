@@ -84,7 +84,7 @@ cd magento2-docker/docker
 sudo docker compose up --build -d
 
 ```
-<img width="1235" height="370" alt="1" src="https://github.com/user-attachments/assets/13f2b794-6619-4c30-a7d0-530cbcf70ba0" />
+<img width="1235" height="370" alt="docker compose up -d" src="https://github.com/user-attachments/assets/13f2b794-6619-4c30-a7d0-530cbcf70ba0" />
 
 We can use 
 ```
@@ -106,8 +106,7 @@ Stop and remove all containers.
 sudo docker ps
 
 ```
-![dockerps](https://github.com/user-attachments/assets/c775052d-bed6-4d40-bd59-97c059e79644)
-
+<img width="1848" height="874" alt="docker ps" src="https://github.com/user-attachments/assets/561cd8e0-ba75-4d34-b18d-20ffd709414a" />
 
 The Apache web server is running at http://localhost/
   ![php](https://github.com/user-attachments/assets/aacaf26a-6eb9-4d79-ba6e-731ca5d3da01)
