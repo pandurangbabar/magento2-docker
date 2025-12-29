@@ -116,7 +116,7 @@ PHPMyAdmin is running at http://localhost:8080/
      ![mysql](https://github.com/pandurangbabar/magento2-docker/assets/59949205/90df2865-55e6-4300-beee-c55fd750c4ca)
 
 Opensearch is running at http://localhost:9200/
- ![Opensearch](https://github.com/user-attachments/assets/90b1d321-6a8b-46eb-9456-1d16c698c12d)
+<img width="744" height="439" alt="Opensearch" src="https://github.com/user-attachments/assets/db2510b6-eeb9-47f9-acbe-875787cecac7" />
 
 > [!NOTE]
 > If the opensearch search is not working, please check and set permissions using the below commands.
