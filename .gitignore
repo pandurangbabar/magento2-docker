@@ -1,6 +1,6 @@
-/es_data
-/dbdata
-/src
-/es_data/*
+/docker/opensearch-data
+/docker/dbdata
+/code
+/docker/opensearch-data/*
 /dbdata/*
-/src/*
+/code/*
