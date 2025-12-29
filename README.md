@@ -122,6 +122,8 @@ Opensearch is running at http://localhost:9200/
 > If the opensearch search is not working, please check and set permissions using the below commands.
 You can use the below commands to set permissions for the folder.
 ```
+rm -rf docker/opensearch-data/node1/*
+rm -rf docker/opensearch-data/node2/*
 sudo chmod -R 777 magento2-docker
 sudo chown -R $USER:$USER magento2-docker
 ```
