@@ -1,0 +1,4 @@
+# Ignore everything in dbdata
+*
+# Except this file
+!.gitignore
