@@ -132,7 +132,7 @@ Now our Magento 2 development environment is ready. Now we will install Magento 
    1. Go to the web container using the below command
 ```
 docker exec -it magento2-docker-web-1 /bin/bash
-sudo rm -rf src/index.php
+rm -rf pub index.php
 ```
    2. Get magento metapackage using the below command
 ```
