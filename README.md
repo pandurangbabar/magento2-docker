@@ -170,7 +170,7 @@ bin/magento sampledata:deploy
 ```
 php bin/magento setup:install \
 --base-url=http://localhost \
---db-host=db \
+--db-host=magento2-docker-db-1 \
 --db-name=magento \
 --db-user=magento \
 --db-password=magento \
