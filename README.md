@@ -257,9 +257,9 @@ or
 
 ```
 docker compose down
-docker volume ls
-docker volume rm magento2-docker_opensearch-data1
-docker volume rm magento2-docker_opensearch-data2
+rm -rf docker/opensearch-data/node1/*
+rm -rf docker/opensearch-data/node2/*
+docker compose up -d
 ```
 
 Thank You.
