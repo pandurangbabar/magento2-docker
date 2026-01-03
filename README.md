@@ -147,18 +147,6 @@ find var generated vendor pub/static pub/media app/etc -type d -exec chmod g+ws 
 chown -R :www-data . # Ubuntu
 chmod u+x bin/magento
 ```
-### Set Opensearch 
-```
-php bin/magento config:set catalog/search/opensearch_server_hostname opensearch-node1
-php bin/magento config:set catalog/search/opensearch_server_port 9200
-php bin/magento cache:flush
-```
-### Set Base url 
-```
-SELECT * FROM `core_config_data` WHERE `path` LIKE '%base_url%';
-UPDATE core_config_data SET value = 'http://localhost/' WHERE path = 'web/unsecure/base_url';
-UPDATE core_config_data SET value = 'http://localhost/' WHERE path = 'web/secure/base_url';
-```
 5. Install Magento using the below command
 > [!NOTE]
 > If you want to install sample data, please run below command before Magento 2 installation.
@@ -188,6 +176,20 @@ php bin/magento setup:install \
 --opensearch-port=9200 \
 --opensearch-index-prefix=magento2 \
 --opensearch-timeout=15
+```
+### Set Opensearch 
+Set openserach if it is not set already.
+```
+php bin/magento config:set catalog/search/opensearch_server_hostname opensearch-node1
+php bin/magento config:set catalog/search/opensearch_server_port 9200
+php bin/magento cache:flush
+```
+### Set Base url 
+Set base url if it is not set already.
+```
+SELECT * FROM `core_config_data` WHERE `path` LIKE '%base_url%';
+UPDATE core_config_data SET value = 'http://localhost/' WHERE path = 'web/unsecure/base_url';
+UPDATE core_config_data SET value = 'http://localhost/' WHERE path = 'web/secure/base_url';
 ```
 6. Disable Two factor Authentication module in Magento
 ```
