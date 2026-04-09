@@ -112,7 +112,7 @@ The Apache web server is running at http://localhost/
 <img width="1177" height="877" alt="docker-php" src="https://github.com/user-attachments/assets/0398783a-7d80-4f48-87e1-a13610f1271f" />
 
 PHPMyAdmin is running at http://localhost:8080/
-     ![mysql](https://github.com/pandurangbabar/magento2-docker/assets/59949205/90df2865-55e6-4300-beee-c55fd750c4ca)
+<img width="1817" height="891" alt="docker-phpmyadmin" src="https://github.com/user-attachments/assets/2e98d81a-dfe2-4c3c-8cf4-4a5949b0ab50" />
 
 Opensearch is running at http://localhost:9200/
 <img width="744" height="439" alt="Opensearch" src="https://github.com/user-attachments/assets/db2510b6-eeb9-47f9-acbe-875787cecac7" />
