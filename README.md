@@ -109,8 +109,7 @@ sudo docker ps
 <img width="1858" height="918" alt="docker-ps" src="https://github.com/user-attachments/assets/09c8d408-bdf3-436f-aa92-b79976ed62ed" />
 
 The Apache web server is running at http://localhost/
-<img width="1298" height="783" alt="PHP" src="https://github.com/user-attachments/assets/d4f3165f-29f2-4e46-8ce7-94f621126574" />
-
+<img width="945" height="695" alt="php-info" src="https://github.com/user-attachments/assets/74e97b0b-aba9-4187-a0a0-57479d4905f5" />
 
 PHPMyAdmin is running at http://localhost:8080/
      ![mysql](https://github.com/pandurangbabar/magento2-docker/assets/59949205/90df2865-55e6-4300-beee-c55fd750c4ca)
