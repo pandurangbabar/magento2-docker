@@ -106,7 +106,7 @@ Stop and remove all containers.
 sudo docker ps
 
 ```
-<img width="1848" height="874" alt="docker ps" src="https://github.com/user-attachments/assets/561cd8e0-ba75-4d34-b18d-20ffd709414a" />
+<img width="1858" height="918" alt="docker-ps" src="https://github.com/user-attachments/assets/09c8d408-bdf3-436f-aa92-b79976ed62ed" />
 
 The Apache web server is running at http://localhost/
 <img width="1298" height="783" alt="PHP" src="https://github.com/user-attachments/assets/d4f3165f-29f2-4e46-8ce7-94f621126574" />
