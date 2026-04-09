@@ -84,7 +84,7 @@ cd magento2-docker/docker
 sudo docker compose up --build -d
 
 ```
-<img width="1235" height="370" alt="docker compose up -d" src="https://github.com/user-attachments/assets/13f2b794-6619-4c30-a7d0-530cbcf70ba0" />
+<img width="1280" height="430" alt="docker-compose-up" src="https://github.com/user-attachments/assets/900a7e05-2c40-4aa4-b9ec-e5764ca35d23" />
 
 We can use 
 ```
