@@ -1,9 +1,27 @@
+version: "3.8"
+
 services:
-  web:
-    build: .
+  nginx:
+    image: nginx:1.28-alpine
     ports:
       - "80:80"
       - "443:443"
+    volumes:
+      - ../code:/var/www/html
+      - ./.docker/nginx/default.conf:/etc/nginx/conf.d/default.conf
+    depends_on:
+      - php
+    networks:
+      - magento2-docker-network
+
+  php:
+    build:
+      context: .
+      dockerfile: Dockerfile.php
+    expose:
+      - "9000"
+    environment:
+      MAGE_MODE: ${MAGE_MODE}
     volumes:
       - ../code:/var/www/html
     depends_on:
@@ -16,10 +34,10 @@ services:
     ports:
       - "3306:3306"
     environment:
-      MYSQL_ROOT_PASSWORD: password
-      MYSQL_DATABASE: magento
-      MYSQL_USER: magento
-      MYSQL_PASSWORD: magento
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
     volumes:
       - ./dbdata:/var/lib/mysql
     networks:
@@ -29,7 +47,7 @@ services:
     image: phpmyadmin/phpmyadmin
     environment:
       PMA_HOST: db
-      MYSQL_ROOT_PASSWORD: password
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
     ports:
       - "8080:80"
     depends_on:
@@ -60,7 +78,6 @@ services:
       - ./opensearch-data/node1:/usr/share/opensearch/data
     ports:
       - "9200:9200"
-      - "9600:9600"
     networks:
       - magento2-docker-network
 
@@ -75,7 +92,7 @@ services:
       OPENSEARCH_JAVA_OPTS: "-Xms512m -Xmx512m"
       DISABLE_INSTALL_DEMO_CONFIG: "true"
       DISABLE_SECURITY_PLUGIN: "true"
-      OPENSEARCH_INITIAL_ADMIN_PASSWORD: ${OPENSEARCH_INITIAL_ADMIN_PASSWORD} 
+      OPENSEARCH_INITIAL_ADMIN_PASSWORD: ${OPENSEARCH_INITIAL_ADMIN_PASSWORD}
     ulimits:
       memlock:
         soft: -1
@@ -104,8 +121,8 @@ services:
   rabbitmq:
     image: rabbitmq:4.1-management
     environment:
-      RABBITMQ_DEFAULT_USER: myuser
-      RABBITMQ_DEFAULT_PASS: mypassword
+      RABBITMQ_DEFAULT_USER: ${RABBITMQ_DEFAULT_USER}
+      RABBITMQ_DEFAULT_PASS: ${RABBITMQ_DEFAULT_PASS}
     ports:
       - "5672:5672"
       - "15672:15672"
@@ -115,4 +132,3 @@ services:
 networks:
   magento2-docker-network:
     driver: bridge
-
