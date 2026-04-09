@@ -59,7 +59,7 @@ sudo chmod -R 777 magento2-docker
 sudo chown -R $USER:$USER magento2-docker
 ```
 3. Open file .env file and update name of your project. <br>
-COMPOSE_PROJECT_NAME=magento2-docker
+COMPOSE_PROJECT_NAME=magento2-docker-latest
 
 ## 3. Create docker environment ##
    1. If you have installed apache2 and MySQL on your system, then we need to stop both services. We need to stop these services because there will be a port conflict when we run these services using a docker container. Please use the below commands to stop the apach2 and mysql service.
