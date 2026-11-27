@@ -24,7 +24,7 @@ RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" \
     && php composer-setup.php --install-dir=/usr/local/bin --filename=composer --version=2.9.5 \
     && rm composer-setup.php
 
-# PHP extensions (Magento required)
+# PHP extensions (Magento required + Xdebug)
 RUN docker-php-ext-configure gd \
     && install-php-extensions \
         bcmath \
@@ -36,9 +36,14 @@ RUN docker-php-ext-configure gd \
         sockets \
         xsl \
         zip \
-        ftp
+        ftp \
+        xdebug
 
 # PHP config
 COPY .docker/php/php.ini /usr/local/etc/php/php.ini
 
+# Xdebug configuration
+COPY .docker/php/xdebug.ini /usr/local/etc/php/conf.d/99-xdebug.ini
+
 WORKDIR /var/www/html
+

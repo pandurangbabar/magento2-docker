@@ -12,7 +12,9 @@ services:
     depends_on:
       - php
     networks:
-      - magento2-docker-network
+      magento2-docker-network:
+        aliases:
+          - local.magento2
 
   php:
     build:
@@ -20,6 +22,8 @@ services:
       dockerfile: Dockerfile.php
     expose:
       - "9000"
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
     environment:
       MAGE_MODE: ${MAGE_MODE}
     volumes:
